@@ -4,9 +4,9 @@ Simple wordsearch(osmismerka)
 
 # Install 
   ```bash
-  git clone github.com/ondrejholik/wordsearch`
-  cd wordsearch`
-  go get -u github.com/fogleman/gg`
+  git clone github.com/ondrejholik/wordsearch
+  cd wordsearch
+  go get -u github.com/fogleman/gg
   go build
   ```
 # Run
