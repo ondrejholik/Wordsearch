@@ -11,7 +11,7 @@ Simple wordsearch(osmismerka)
   `./wordsearch ./small.txt`
 
 # Result
-  ![alt text]("https://github.com/ondrejholik/wordsearch/blob/master/wordsearch.png?raw=true")
+  ![Wordsearch](./wordsearch.png)
 
 
 
