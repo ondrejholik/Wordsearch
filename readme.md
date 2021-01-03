@@ -11,7 +11,7 @@ Simple wordsearch(osmismerka)
   `./wordsearch ./small.txt`
 
 # Result
-  []("./wordsearch.png")
+  [wordsearch]("./wordsearch.png")
 
 
 
