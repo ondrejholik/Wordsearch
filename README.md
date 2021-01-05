@@ -1,6 +1,7 @@
 # About
-Simple wordsearch(osmismerka)
+Simple wordsearch(osmismerka) generator
   - export to png
+  - adapt rows and columns based on text size
 
 # Install 
   ```bash
@@ -14,7 +15,3 @@ Simple wordsearch(osmismerka)
 
 # Result
   ![Wordsearch](./wordsearch.png)
-
-
-
-
