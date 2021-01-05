@@ -117,6 +117,7 @@ func main(){
       if counter > 10000{
         fmt.Println("Not solvable, Abort")
         break
+        os.Exit(2)
       }
     }
   }
@@ -139,8 +140,9 @@ func main(){
   }
 
 
-  var S = 165 * size
-  dc := gg.NewContext(S, S)
+  var W = 165 * size
+  var H = 165 * size + (size/4)*165
+  dc := gg.NewContext(W, H)
 
 
    dc.SetRGB(1, 1, 1)
@@ -155,8 +157,29 @@ func main(){
      for j := range matrix[i]{
        line += string(matrix[i][j])
      }
-     y := S/2 - h*len(matrix)/2 + i*h
-     dc.DrawStringAnchored(line, float64(S/2), float64(y), 0.5, 0.5)
+     y := W/2 - h*len(matrix)/2 + i*h
+     dc.DrawStringAnchored(line, float64(W/2), float64(y), 0.5, 0.5)
    }
+
+   const h2 = 64
+   if err := dc.LoadFontFace("./roboto.ttf", 64); err != nil {
+     panic(err)
+   }
+   var line string = ""
+   var lc int = 0
+   var wc int = 0
+   for i := range words {
+     if (wc + len(words[i])+2)*32 > int(float64(W)*0.8) {
+        y := 165*size - (size/8)*165 + lc * h2
+        dc.DrawStringAnchored(line, float64(W/2), float64(y), 0.5, 0.5)
+        lc++
+        wc = 0
+        line = ""
+     }
+     line += words[i] + ", "
+     wc += len(words[i])+2
+   }
+   y := 165*size - (size/8)*165 + lc*h2
+   dc.DrawStringAnchored(line, float64(W/2), float64(y), 0.5, 0.5)
    dc.SavePNG("wordsearch.png")
 }
